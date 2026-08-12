@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n; 
+    //now will need to calculate trailing zeroes in n!
+    int cnt = 0;
+    while(n>0){
+        cnt += n/5;
+        n/=5;
+    }
+    cout << cnt << endl;
+    return 0;
+}

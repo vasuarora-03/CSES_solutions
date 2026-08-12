@@ -1,0 +1,11 @@
+# Ignore everything
+*
+# But allow directories so we can unignore files inside them
+!*/
+
+# Unignore all .cpp files anywhere in the tree
+!*.cpp
+!**/*.cpp
+
+# Keep the .gitignore itself
+!.gitignore

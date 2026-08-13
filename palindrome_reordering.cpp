@@ -19,7 +19,6 @@ int main(){
         cout << "NO SOLUTION" << endl;
     }
     else{
-        //PRINT THE PALINDROME
         string first_half = "";
         for(auto it: mp){
             if(it.second % 2 == 0){

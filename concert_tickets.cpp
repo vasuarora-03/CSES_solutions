@@ -1,18 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int n; //number of tickets
-    int m; //customers 
+int main() {
+    int n, m;
     cin >> n >> m;
-    vector<int> ticketsPrice(n);
-    vector<int> customerMaxPrice(m);
 
-    for(int i=0; i<n; i++){
-        cin >> ticketsPrice[i];
-    }
-    for(int i=0; i<m; i++){
-        cin >> customerMaxPrice[i];
+    multiset<int> tickets;
+
+    for(int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        tickets.insert(x);
     }
 
+    for(int i = 0; i < m; i++) {
+        int x;
+        cin >> x;
+
+        auto it = tickets.upper_bound(x);
+
+        if(it == tickets.begin()) {
+            cout << -1 << endl;
+        }
+        else {
+            --it;
+            cout << *it << endl;
+            tickets.erase(it);
+        }
+    }
+
+    return 0;
 }
